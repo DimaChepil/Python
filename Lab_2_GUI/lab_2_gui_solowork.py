@@ -23,21 +23,33 @@ canvas.create_text(215,200,text='100') #y_100
 canvas.create_text(x0+5,110,text='y',anchor=W) #name vis Y
 canvas.create_text(425,300,text='x',anchor=NW) #name vis X
 
+canvas.create_rectangle([198,298],[203,303],width=0, fill='orange') #orange kvadrat
+
 p = 50
 while p<=350:
     canvas.create_line(p,295,p,305,fill='blue') 
     canvas.create_line(195,p+100,205,p+100,fill='blue')
     p+=10 #krok mitki
 
-points=[]
+parabola=[]
 for x in range(x1+30,x2+dx+30,dx):
     y = y0 - (x-(x0+30))**2/100
     z = (x,y)
-    points.append(z)
+    parabola.append(z)
 
-print(points)
-print(len(points))
-canvas.create_line(points,fill='red', smooth=1,width=2)
+pryama=[]
+for x in range(x1+30,x2+30+dx,dx):
+    y= y0-(abs(x-x0-30))
+    z = (x,y)
+    pryama.append(z)
+
+print(parabola)
+print(len(parabola))
+canvas.create_line(parabola,fill='yellow', smooth=1,width=2)
+
+print(pryama)
+print(len(pryama))
+canvas.create_line(pryama, fill='red', smooth=1, width=2)
 
 canvas.pack()
 button = Button(root, text='Закривушка насяльніка', command=quit)
