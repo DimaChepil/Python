@@ -54,6 +54,3 @@ canvas.create_line(pryama, fill='red', smooth=1, width=2)
 canvas.pack()
 button = Button(root, text='Закривушка насяльніка', command=quit)
 button.pack()
-
-
-root.mainloop()	
