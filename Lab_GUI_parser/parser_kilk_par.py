@@ -12,10 +12,10 @@ from datetime import date
 dict_room = {1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set()}
 
 
-sdate = input("Введіть start дату у форматі [18.10.2017] = ")
-edate = input("Введіть end дату у форматі [18.10.2017] = ")
+sdate = input("Г‚ГўГҐГ¤ВіГІГј start Г¤Г ГІГі Гі ГґГ®Г°Г¬Г ГІВі [18.10.2017] = ")
+edate = input("Г‚ГўГҐГ¤ВіГІГј end Г¤Г ГІГі Гі ГґГ®Г°Г¬Г ГІВі [18.10.2017] = ")
 
-teacher = 'Савка (п) Іван Ярославович'
+teacher = 'Г‘Г ГўГЄГ  (ГЇ) ВІГўГ Г­ ГџГ°Г®Г±Г«Г ГўГ®ГўГЁГ·'
 
 url = "http://asu.pnu.edu.ua/cgi-bin/timetable.cgi"
 headers = {'Content-Type': 'text/html; charset=windows-1251'}
