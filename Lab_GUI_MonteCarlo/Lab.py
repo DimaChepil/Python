@@ -1,5 +1,7 @@
 from tkinter import*
 from random import*
+from math import sqrt
+from math import pi
 root = Tk()
 root.title('Метод Монте-Карло')
 root.geometry('650x650')
@@ -16,15 +18,15 @@ label2.pack(fill=X)
 label3=Label(root, font='Arial 15')
 label3.pack(fill=X)
 
-canvas=Canvas(root, height=450, width = 450, bg='yellow')
+canvas=Canvas(root, height=300, width = 300, bg='yellow')
 canvas.pack()
 
-canvas.create_rectangle(90,90,290,290, outline = 'blue')
-canvas.create_oval(90,90,290,290, outline='red')
+canvas.create_rectangle(80,80,290,290, outline = 'blue')
+canvas.create_oval(80,80,290,290, outline='red')
 p=0
 
 def circle():
-    canvas.create_rectangle(80,80,300,300,  fill = '#F5DEB3',outline = '#F5DEB3')
+    canvas.create_rectangle(80,80,300,300,  fill = 'yellow',outline = 'yellow')
     canvas.create_rectangle(90,90,290,290, outline = 'blue')
     canvas.create_oval(90,90,290,290, outline='red')
 
