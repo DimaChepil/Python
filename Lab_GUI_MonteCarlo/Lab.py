@@ -18,7 +18,7 @@ label2.pack(fill=X)
 label3=Label(root, font='Arial 15')
 label3.pack(fill=X)
 
-canvas=Canvas(root, height=300, width = 300, bg='yellow')
+canvas=Canvas(root, height=380, width = 380, bg='yellow')
 canvas.pack()
 
 canvas.create_rectangle(80,80,290,290, outline = 'blue')
