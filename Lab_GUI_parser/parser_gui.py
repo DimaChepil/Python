@@ -5,13 +5,13 @@ from tkinter import *
 
 root = Tk()
 root.title('Кількість пар ПНУ \t © Dmytro Chepil')
-root.geometry('700x250')
+root.geometry('376x239')
 
 sdate = StringVar()
 edate = StringVar()
 
-sdate_label = Label(text="Введіть початкову дату у форматі [18.10.17] = ")
-edate_label = Label(text="Введіть кінцеву дату у форматі [18.10.17] = ")
+sdate_label = Label(text="Введіть початкову дату у форматі [18.10.17] ")
+edate_label = Label(text="Введіть кінцеву дату у форматі      [18.10.17] ")
  
 sdate_label.grid(row=1, column=0, sticky="w")
 edate_label.grid(row=2, column=0, sticky="w")
@@ -22,14 +22,11 @@ edate_entry = Entry(textvariable=edate)
 sdate_entry.grid(row=1,column=1, padx=5, pady=5)
 edate_entry.grid(row=2,column=1, padx=5, pady=5)
 
-lba_label=Label(text="К-сть пар: ")
+lba_label=Label(text="Кількість пар: ")
+lba_label.grid(row=4,column=1)
 
-lba_label.grid(row=1,column=6)
-
-lba = Label(root)
-lba.config(text = '')
-
-lba.grid(row=1,column=7)
+text=Text(width=15, height=8)
+text.grid(row=5,column=1)
 
 dict_room = {1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set()}
 
@@ -71,7 +68,8 @@ def select_item(event):
           return teacher
       
              
-
+listbox_label=Label(text="Виберіть викладача: ")
+listbox_label.grid(row=4,column=0)
 
 listbox = Listbox(root, width=40, height=8, font=('times', 10))
 listbox.bind('<<ListboxSelect>>', select_item)
@@ -81,7 +79,8 @@ for item in listbox_items:
     listbox.insert(END, item)
 
 
-
+def deleteText():
+    text.delete(1.0, END)
 
 def parser():
       sqdate=sdate.get()
@@ -111,10 +110,14 @@ def parser():
                                     dict_line[key]+=1
                               else:
                                     dict_line[key] =1
-      lba.config(text = dict_line,fg='green')
+      for kv in dict_line.items():
+            text.insert(1.0,(str(kv[0]) + " = " + str(kv[1])+ "\n"))
 
 
-button = Button(text="Порахувати пари", command=parser)
-button.grid(row=4,column=1)
+button = Button(text="Порахувати пари", command=parser, width=33)
+button.grid(row=6,column=0)
+
+buttonclear = Button(text="Очистити", command=deleteText, width=16)
+buttonclear.grid(row=6,column=1)
 
 root.mainloop()
